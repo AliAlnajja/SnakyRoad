@@ -15,5 +15,6 @@ public class Snake extends Actor
     public void act() 
     {
         move(-5);
+        turn(15);
     }    
 }
