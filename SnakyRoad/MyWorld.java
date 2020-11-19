@@ -34,5 +34,6 @@ public class MyWorld extends World
         addObject(car2,21,151);
         Car car3 = new Car();
         addObject(car3,18,239);
+        removeObject(car3);
     }
 }
