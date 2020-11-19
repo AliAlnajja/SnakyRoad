@@ -41,23 +41,27 @@ public class MyWorld extends World
     {
         if (Greenfoot.getRandomNumber(200)<1)
         {
-            addObject(new Car(), 1, 50);
+            addObject(new Car(), 1, 70);
         }
         if (Greenfoot.getRandomNumber(200)<1)
         {
-            addObject(new Car(), 1, 90);
+            addObject(new Car(), 1, 110);
         }
         if (Greenfoot.getRandomNumber(200)<1)
         {
-            addObject(new Car(), 1, 130);
+            addObject(new Car(), 1, 150);
         }
         if (Greenfoot.getRandomNumber(200)<1)
         {
-            addObject(new CarToLeft(), 599, 170);
+            addObject(new CarToLeft(), 599, 190);
         }
         if (Greenfoot.getRandomNumber(200)<1)
         {
-            addObject(new CarToLeft(), 599, 210);
+            addObject(new CarToLeft(), 599, 230);
+        }
+        if (Greenfoot.getRandomNumber(200)<1)
+        {
+            addObject(new CarToLeft(), 599, 270);
         }
     } 
 }
