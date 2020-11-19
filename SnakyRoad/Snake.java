@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -14,7 +15,21 @@ public class Snake extends Actor
      */
     public void act() 
     {
-        move(-5);
-        turn(15);
-    }    
+        checkKeyPress();
+    }
+    
+    public void checkKeyPress(){
+        if (Greenfoot.isKeyDown("d")){
+            setLocation(getX()+3, getY());
+        }
+        if (Greenfoot.isKeyDown("a")){
+            setLocation(getX()-3, getY());
+        }
+        if (Greenfoot.isKeyDown("w")){
+            setLocation(getX(), getY()-3);
+        }
+        if (Greenfoot.isKeyDown("s")){
+            setLocation(getX(), getY()+3);
+        }
+    }
 }
