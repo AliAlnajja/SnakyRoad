@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class CopyOfCar here.
  * 
@@ -14,10 +13,9 @@ public class CarToLeft extends Actor
      */
     public void act() 
     {
-        //getImage().mirrorVertically();
-        move(-3);
+        move(-4);
         setLocation(getX(), getY());
-        if (getX() == 2) 
+        if (getX() < 1) 
         {
             getWorld().removeObject(this);
         }

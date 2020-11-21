@@ -14,7 +14,7 @@ public class Car extends Actor
      */
     public void act() 
     {
-        move(3);
+        move(4);
         setLocation(getX(), getY());
         if (getX() == 599) 
         {
