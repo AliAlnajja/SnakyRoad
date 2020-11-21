@@ -25,21 +25,21 @@ public class Snake extends Actor
      */
     public Snake()
     {
-        getImage().scale(50,50);
-        (this.image1).scale(50,50);
-        (this.image2).scale(50,50);
-        (this.image3).scale(50,50);
-        (this.image4).scale(50,50);
-        (this.image5).scale(50,50);
-        (this.image6).scale(50,50);
-        (this.image7).scale(50,50);
-        (this.image8).scale(50,50);
+        (this.image1).scale(50,20);
+        (this.image2).scale(50,20);
+        (this.image3).scale(50,20);
+        (this.image4).scale(50,20);
+        (this.image5).scale(50,20);
+        (this.image6).scale(50,20);
+        (this.image7).scale(50,20);
+        (this.image8).scale(50,20);
     }
     public void act() 
     {
         checkKeyPressed();
         skipFrame++;
         SecondLevel();
+        ThirdLevel();
     }
     
     public void animate(){
@@ -87,9 +87,18 @@ public class Snake extends Actor
     public void SecondLevel()
     {
         Actor Eggs = getOneIntersectingObject(Eggs.class);
-        if (Eggs !=null)
+        if (Eggs != null)
         {
             Greenfoot.setWorld(new Level2());
+        }
+    }
+    public void ThirdLevel()
+    {
+        Actor BirdsEggs = getOneIntersectingObject(BirdsEggs.class);
+        int Level2;
+        if (BirdsEggs != null)
+        {
+            Greenfoot.setWorld(new Level3());
         }
     }
 }
