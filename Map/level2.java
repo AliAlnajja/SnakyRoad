@@ -46,6 +46,7 @@ public class Level2 extends World
             }
                 //addObject(new Road(), 375, 556);
                 //addObject(new Road(), 375, 407);
-                addObject(new Eggs(), 375, 30);
+                addObject(new BirdsEggs(), 375, 30);
+                addObject(new Snake(), 373, 709);
     }
 }
