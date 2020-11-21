@@ -13,6 +13,7 @@ public class Level1 extends World
      * Constructor for objects of class Level1.
      * 
      */
+    private int count = 0;
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
@@ -45,6 +46,46 @@ public class Level1 extends World
                 addObject(new Road(), 375, 223);
                 addObject(new SnakeEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
+    }
+    public void act()
+    {
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter() == 6))
+        {
+            addObject(new Car(), 1, 507);
+        }
+        /*if (Greenfoot.getRandomNumber(100)<1 && (counter()==1 || counter()==4
+                || counter() == 7))
+        {
+            addObject(new Car(), 1, 110);
+        }*/
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
+        {
+            addObject(new Car(), 1, 195);
+        }
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==0 || counter()==4))
+        {
+            addObject(new CarToLeft(), 749, 561);
+        }
+        /*if (Greenfoot.getRandomNumber(100)<1 && (counter()==1 || counter() ==4
+                || counter() == 8))
+        {
+            addObject(new CarToLeft(), 749, 230);
+        }*/
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==0 || counter()==4))
+        {
+            addObject(new CarToLeft(), 749, 250);
+        }
+        counter();
+    } 
+    public int counter()
+    {
+        if(count<=8){
+            return count++;
+        }
+        else{
+            count = 0;
+            return count;
+        }
     }
 }
     

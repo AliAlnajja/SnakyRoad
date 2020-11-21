@@ -40,6 +40,7 @@ public class Snake extends Actor
         skipFrame++;
         SecondLevel();
         ThirdLevel();
+        TouchingCheck();
     }
     
     public void animate(){
@@ -99,6 +100,13 @@ public class Snake extends Actor
         if (BirdsEggs != null)
         {
             Greenfoot.setWorld(new Level3());
+        }
+    }
+    public void TouchingCheck()
+    {
+        if (isTouching(Car.class) || isTouching(CarToLeft.class))
+        {
+            Greenfoot.stop();
         }
     }
 }
