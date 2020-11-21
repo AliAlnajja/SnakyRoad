@@ -44,6 +44,7 @@ public class Level1 extends World
                 addObject(new Road(), 375, 533);
                 addObject(new Road(), 375, 223);
                 addObject(new Eggs(), 375, 30);
+                addObject(new Snake(), 373, 709);
     }
 }
     
