@@ -86,8 +86,8 @@ public class Snake extends Actor
     }
     public void SecondLevel()
     {
-        Actor Eggs = getOneIntersectingObject(Eggs.class);
-        if (Eggs != null)
+        Actor SnakeEggs = getOneIntersectingObject(SnakeEggs.class);
+        if (SnakeEggs != null)
         {
             Greenfoot.setWorld(new Level2());
         }
