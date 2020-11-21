@@ -23,10 +23,23 @@ public class Snake extends Actor
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Snake()
+    {
+        getImage().scale(50,50);
+        (this.image1).scale(50,50);
+        (this.image2).scale(50,50);
+        (this.image3).scale(50,50);
+        (this.image4).scale(50,50);
+        (this.image5).scale(50,50);
+        (this.image6).scale(50,50);
+        (this.image7).scale(50,50);
+        (this.image8).scale(50,50);
+    }
     public void act() 
     {
         checkKeyPressed();
         skipFrame++;
+        SecondLevel();
     }
     
     public void animate(){
@@ -70,5 +83,13 @@ public class Snake extends Actor
             turn(5);
             animate();
         }
-    }  
+    }
+    public void SecondLevel()
+    {
+        Actor Eggs = getOneIntersectingObject(Eggs.class);
+        if (Eggs !=null)
+        {
+            Greenfoot.setWorld(new Level2());
+        }
+    }
 }
