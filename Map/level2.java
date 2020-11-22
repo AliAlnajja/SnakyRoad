@@ -13,6 +13,7 @@ public class Level2 extends World
      * Constructor for objects of class Level2.
      * 
      */
+    private int count = 0;
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
@@ -48,5 +49,31 @@ public class Level2 extends World
                 //addObject(new Road(), 375, 407);
                 addObject(new BirdsEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
+    }
+    public void act()
+    {
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter() == 6))
+        {
+            addObject(new Alligator(), 1, 507);
+        }
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
+        {
+            addObject(new Alligator(), 1, 195);
+        }
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
+        {
+            addObject(new Log(), 1, 140);
+        }
+         counter();
+    } 
+    public int counter()
+    {
+        if(count<=8){
+            return count++;
+        }
+        else{
+            count = 0;
+            return count;
+        }
     }
 }

@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Snake extends Actor
-{ private GreenfootImage image1 =  new GreenfootImage("snake1.png");
+{   private GreenfootImage image1 =  new GreenfootImage("snake1.png");
     private GreenfootImage image2 =  new GreenfootImage("snake2.png");
     private GreenfootImage image3 =  new GreenfootImage("snake3.png");
     private GreenfootImage image4 =  new GreenfootImage("snake4.png");
@@ -15,8 +15,6 @@ public class Snake extends Actor
     private GreenfootImage image6 =  new GreenfootImage("snake6.png");
     private GreenfootImage image7 =  new GreenfootImage("snake7.png");
     private GreenfootImage image8 =  new GreenfootImage("snake8.png");
-    
-    
     int frame = 1;
     int skipFrame = 0;
     /**
@@ -41,6 +39,7 @@ public class Snake extends Actor
         SecondLevel();
         ThirdLevel();
         TouchingCheck();
+        IsInWater();
     }
     
     public void animate(){
@@ -69,19 +68,24 @@ public class Snake extends Actor
     
     public void checkKeyPressed()
     {
-        if (Greenfoot.isKeyDown("up"))
+        if (Greenfoot.isKeyDown("w"))
         {
-            move(3);
+            setLocation(getX(),getY()-2);           
             animate();
         }
-        if (Greenfoot.isKeyDown("left"))
+        if (Greenfoot.isKeyDown("a"))
         {
-            turn(-5);
+            setLocation(getX()-2,getY());            
             animate();
         }
-        if (Greenfoot.isKeyDown("right"))
+        if (Greenfoot.isKeyDown("d"))
         {
-            turn(5);
+            setLocation(getX()+2,getY());           
+            animate();
+        }
+        if (Greenfoot.isKeyDown("s"))
+        {
+            setLocation(getX(),getY()+2);           
             animate();
         }
     }
@@ -107,6 +111,18 @@ public class Snake extends Actor
         if (isTouching(Car.class) || isTouching(CarToLeft.class))
         {
             Greenfoot.stop();
+        }
+    }
+    public void IsInWater()
+    {
+        if (getWorld().getClass() == Level2.class)
+        {
+            if(getY()>125 && getY()<325){
+                move(1);
+            }
+            if(getY()>425 && getY()<625){
+                move(1);
+            }
         }
     }
 }
