@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    //private int count = 0;
+    private int count = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -39,29 +39,46 @@ public class MyWorld extends World
     }
     public void act()
     {
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==0 || counter()==3
+                || counter() == 6))
         {
             addObject(new Car(), 1, 70);
         }
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==1 || counter()==4
+                || counter() == 7))
         {
             addObject(new Car(), 1, 110);
         }
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5
+                || counter() == 8))
         {
             addObject(new Car(), 1, 150);
         }
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==0 || counter()==4
+                || counter() == 7))
         {
             addObject(new CarToLeft(), 599, 190);
         }
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==1 || counter() ==4
+                || counter() == 8))
         {
             addObject(new CarToLeft(), 599, 230);
         }
-        if (Greenfoot.getRandomNumber(200)<1)
+        if (Greenfoot.getRandomNumber(100)<1 && (counter()==0 || counter()==4
+                || counter() == 8))
         {
             addObject(new CarToLeft(), 599, 270);
         }
+        counter();
     } 
+    public int counter()
+    {
+        if(count<=8){
+            return count++;
+        }
+        else{
+            count = 0;
+            return count;
+        }
+    }
 }

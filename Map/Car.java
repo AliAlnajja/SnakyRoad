@@ -1,23 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
- * Write a description of class CopyOfCar here.
+ * Write a description of class Car here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CarToLeft extends Actor
+public class Car extends Actor
 {
     /**
-     * Act - do whatever the CopyOfCar wants to do. This method is called whenever
+     * Act - do whatever the Car wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        move(-4);
+        // Add your action code here.
+        move(4);
         setLocation(getX(), getY());
-        if (getX() < 1) 
+        if (getX() >= 748) 
         {
             getWorld().removeObject(this);
         }
-    }
+    }    
 }
