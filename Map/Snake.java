@@ -100,10 +100,18 @@ public class Snake extends Actor
     public void ThirdLevel()
     {
         Actor BirdsEggs = getOneIntersectingObject(BirdsEggs.class);
-        int Level2;
         if (BirdsEggs != null)
         {
             Greenfoot.setWorld(new Level3());
+            getWorld().showText("You Win", 10 ,10);
+        }
+    }
+    public void endgame()
+    {   
+        Actor CanaryEggs = getOneIntersectingObject(CanaryEggs.class);
+        if (CanaryEggs != null)
+        {
+            getWorld().showText("You Win", 10 ,10);
         }
     }
     public void TouchingCheck()

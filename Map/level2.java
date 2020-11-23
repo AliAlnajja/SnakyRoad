@@ -62,7 +62,7 @@ public class Level2 extends World
         }
         if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
         {
-            addObject(new Log(), 1, 140);
+            //addObject(new Log(), 1, 140);
         }
          counter();
     } 
