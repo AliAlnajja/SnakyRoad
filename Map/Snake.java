@@ -94,7 +94,7 @@ public class Snake extends Actor
         Actor SnakeEggs = getOneIntersectingObject(SnakeEggs.class);
         if (SnakeEggs != null)
         {
-            Greenfoot.setWorld(new Level2());
+            Greenfoot.setWorld(new level2());
         }
     }
     public void ThirdLevel()
@@ -123,7 +123,7 @@ public class Snake extends Actor
     }
     public void IsInWater()
     {
-        if (getWorld().getClass() == Level2.class)
+        if (getWorld().getClass() == level2.class)
         {
             if(getY()>125 && getY()<325){
                 move(1);
