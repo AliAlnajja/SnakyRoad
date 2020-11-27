@@ -68,25 +68,25 @@ public class Snake extends Actor
     
     public void checkKeyPressed()
     {
-        if (Greenfoot.isKeyDown("w"))
+        if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
         {
             setLocation(getX(),getY()-2);       
             setRotation(270);
             animate();
         }
-        if (Greenfoot.isKeyDown("a"))
+        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()-2,getY());  
             setRotation(180);
             animate();
         }
-        if (Greenfoot.isKeyDown("d"))
+        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             setLocation(getX()+2,getY());    
             setRotation(0);
             animate();
         }
-        if (Greenfoot.isKeyDown("s"))
+        if (Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
         {
             setLocation(getX(),getY()+2);  
             setRotation(90);
