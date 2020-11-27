@@ -14,6 +14,11 @@ public class Car2 extends Actor
      */
     public void act() 
     {
-        
+        move(6);
+        setLocation(getX(), getY());
+        if (getX() >= 748) 
+        {
+            getWorld().removeObject(this);
+        }
     }    
 }

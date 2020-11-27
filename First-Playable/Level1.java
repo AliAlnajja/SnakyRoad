@@ -51,6 +51,9 @@ public class Level1 extends World
     {
          counter();
          spawnCar();
+         spawnCar2();
+         spawnCar3();
+         spawnAmbulance();
     } 
     public int counter()
     {
@@ -64,24 +67,80 @@ public class Level1 extends World
     }
     public void spawnCar()
     {
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==1 || counter() == 34|| counter()==67))
+        if (Greenfoot.getRandomNumber(75)<20 && (counter()==67))
         {
             addObject(new Car(), 1, 507);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==25 || counter()==58|| counter()==91))
+        if (Greenfoot.getRandomNumber(75)<20 && (counter()==91))
         {
             addObject(new Car(), 1, 195);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==3 || counter()==99|| counter()==36))
+        if (Greenfoot.getRandomNumber(75)<20 && (counter()==36))
         {
-            addObject(new CarToLeft(), 749, 561);
+            addObject(new CarToLeft(), 749, 570);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==8 || counter()==41 || counter()==74))
+        if (Greenfoot.getRandomNumber(75)<20 && (counter()==74))
         {
             addObject(new CarToLeft(), 749, 255);
         }
     }
-    
+    public void spawnCar2()
+    {
+        if (Greenfoot.getRandomNumber(75)>55 && (counter()==87))
+        {
+            addObject(new Car2(), 1, 507);
+        }
+        if (Greenfoot.getRandomNumber(75)>55 && (counter()==96))
+        {
+            addObject(new Car2(), 1, 195);
+        }
+        if (Greenfoot.getRandomNumber(75)>55 && (counter()==64))
+        {
+            addObject(new Car2ToLeft(), 749, 570);
+        }
+        if (Greenfoot.getRandomNumber(75)>55 && (counter()==56))
+        {
+            addObject(new Car2ToLeft(), 749, 255);
+        }
+    }
+    public void spawnCar3()
+    {
+        if (Greenfoot.getRandomNumber(95)>75 && (counter()==75))
+        {
+            addObject(new Car3(), 1, 507);
+        }
+        if (Greenfoot.getRandomNumber(95)>75 && (counter()==68))
+        {
+            addObject(new Car3(), 1, 195);
+        }
+        if (Greenfoot.getRandomNumber(95)>75 && (counter()==74))
+        {
+            addObject(new Car3ToLeft(), 749, 570);
+        }
+        if (Greenfoot.getRandomNumber(95)>75 && (counter()==50))
+        {
+            addObject(new Car3ToLeft(), 749, 255);
+        }
+    }
+    public void spawnAmbulance()
+    {
+        if (Greenfoot.getRandomNumber(115)>95 && (counter()==5))
+        {
+            addObject(new Ambulance(), 1, 507);
+        }
+        if (Greenfoot.getRandomNumber(115)>95 && (counter()==18))
+        {
+            addObject(new Ambulance(), 1, 195);
+        }
+        if (Greenfoot.getRandomNumber(115)>95 && (counter()==46))
+        {
+            addObject(new AmbulanceToLeft(), 749, 570);
+        }
+        if (Greenfoot.getRandomNumber(115)>95 && (counter()==88))
+        {
+            addObject(new AmbulanceToLeft(), 749, 255);
+        }
+    }
 }
     
 

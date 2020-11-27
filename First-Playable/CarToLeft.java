@@ -14,13 +14,11 @@ public class CarToLeft extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
         move(-6);
         setLocation(getX(), getY());
         if (getX() < 1) 
         {
             getWorld().removeObject(this);
         }
-        
     }    
 }

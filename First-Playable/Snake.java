@@ -124,6 +124,18 @@ public class Snake extends Actor
         {
             Greenfoot.stop();
         }
+        if (isTouching(Car2.class) || isTouching(Car2ToLeft.class))
+        {
+            Greenfoot.stop();
+        }
+        if (isTouching(Car3.class) || isTouching(Car3ToLeft.class))
+        {
+            Greenfoot.stop();
+        }
+        if (isTouching(Ambulance.class) || isTouching(AmbulanceToLeft.class))
+        {
+            Greenfoot.stop();
+        }
     }
     public void IsInWater()
     {

@@ -14,6 +14,11 @@ public class Ambulance extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        move(6);
+        setLocation(getX(), getY());
+        if (getX() >= 748) 
+        {
+            getWorld().removeObject(this);
+        }
     }    
 }
