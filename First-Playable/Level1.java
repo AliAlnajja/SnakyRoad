@@ -54,6 +54,7 @@ public class Level1 extends World
          spawnCar2();
          spawnCar3();
          spawnAmbulance();
+         gettingRandomNumber();
     } 
     public int counter()
     {
@@ -67,79 +68,83 @@ public class Level1 extends World
     }
     public void spawnCar()
     {
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==67))
+        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
         {
             addObject(new Car(), 1, 507);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==91))
+        if ((gettingRandomNumber() == 7 || gettingRandomNumber() == 18) && (counter()==74))
         {
             addObject(new Car(), 1, 195);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==36))
+        if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 8) && (counter()==0))
         {
             addObject(new CarToLeft(), 749, 570);
         }
-        if (Greenfoot.getRandomNumber(75)<20 && (counter()==74))
+        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==24))
         {
             addObject(new CarToLeft(), 749, 255);
         }
     }
     public void spawnCar2()
     {
-        if (Greenfoot.getRandomNumber(75)>55 && (counter()==87))
+        if ((gettingRandomNumber() == 16 || gettingRandomNumber() == 17) && (counter()==25))
         {
             addObject(new Car2(), 1, 507);
         }
-        if (Greenfoot.getRandomNumber(75)>55 && (counter()==96))
+        if ((gettingRandomNumber() == 13 || gettingRandomNumber() == 4) && (counter()==99))
         {
             addObject(new Car2(), 1, 195);
         }
-        if (Greenfoot.getRandomNumber(75)>55 && (counter()==64))
+        if ((gettingRandomNumber() == 1 || gettingRandomNumber() == 12) && (counter()==74))
         {
             addObject(new Car2ToLeft(), 749, 570);
         }
-        if (Greenfoot.getRandomNumber(75)>55 && (counter()==56))
+        if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 5) && (counter()==99))
         {
             addObject(new Car2ToLeft(), 749, 255);
         }
     }
     public void spawnCar3()
     {
-        if (Greenfoot.getRandomNumber(95)>75 && (counter()==75))
+        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 14) && (counter()==75))
         {
             addObject(new Car3(), 1, 507);
         }
-        if (Greenfoot.getRandomNumber(95)>75 && (counter()==68))
+        if (gettingRandomNumber() < 2 && (counter()==25))
         {
             addObject(new Car3(), 1, 195);
         }
-        if (Greenfoot.getRandomNumber(95)>75 && (counter()==74))
+        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==99))
         {
             addObject(new Car3ToLeft(), 749, 570);
         }
-        if (Greenfoot.getRandomNumber(95)>75 && (counter()==50))
+        if ((gettingRandomNumber() == 6 || gettingRandomNumber() == 9) && (counter()==0))
         {
             addObject(new Car3ToLeft(), 749, 255);
         }
     }
     public void spawnAmbulance()
     {
-        if (Greenfoot.getRandomNumber(115)>95 && (counter()==5))
+        if (gettingRandomNumber() < 2 && (counter()==50))
         {
             addObject(new Ambulance(), 1, 507);
         }
-        if (Greenfoot.getRandomNumber(115)>95 && (counter()==18))
+        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 6) && (counter()==50))
         {
             addObject(new Ambulance(), 1, 195);
         }
-        if (Greenfoot.getRandomNumber(115)>95 && (counter()==46))
+        if ((gettingRandomNumber() == 15 || gettingRandomNumber() == 16) && (counter()==49))
         {
             addObject(new AmbulanceToLeft(), 749, 570);
         }
-        if (Greenfoot.getRandomNumber(115)>95 && (counter()==88))
+        if ((gettingRandomNumber() == 17 || gettingRandomNumber() == 18) && (counter()==49))
         {
             addObject(new AmbulanceToLeft(), 749, 255);
         }
+    }
+    public int gettingRandomNumber()
+    {
+        return Greenfoot.getRandomNumber(20);
     }
 }
     

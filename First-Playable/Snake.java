@@ -42,6 +42,7 @@ public class Snake extends Actor
         TouchingCheck();
         IsInWater();
         displayLife();
+        checkIfIsAtEdge();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -161,6 +162,13 @@ public class Snake extends Actor
     }
     public void displayLife()
     {
-        getWorld().showText("Life "+life, 100, 100);
+        getWorld().showText("Lives: "+life, 100, 100);
+    }
+    public void checkIfIsAtEdge()
+    {
+        if (getX() == 0 || getX() == getWorld().getWidth()-1)
+        {
+            loseLife();
+        }
     }
 }
