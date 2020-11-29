@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=void\ spawnAmbulance()
 comment8.params=
 comment8.target=int\ gettingRandomNumber()
-numComments=9
+comment9.params=
+comment9.target=void\ spawnPothole()
+numComments=10

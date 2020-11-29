@@ -15,7 +15,7 @@ public class Level1 extends World
      */
     private int count = 0;
     int [][] map = 
-           {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+        {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -36,26 +36,37 @@ public class Level1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1); 
         for(int row = 0; row < 16; row++)
-        for(int col = 0; col < 16; col++)
-            if(map[row][col] == 0)
-                addObject(new Grass(), col * 50, row * 50);
-            else if (map[row][col] == 1){
-                addObject(new Desert(), col * 50, row * 50);
-            }
-                addObject(new Road(), 375, 533);
-                addObject(new Road(), 375, 223);
-                addObject(new SnakeEggs(), 375, 30);
-                addObject(new Snake(), 373, 709);
+            for(int col = 0; col < 16; col++)
+                if(map[row][col] == 0)
+                    addObject(new Grass(), col * 50, row * 50);
+                else if (map[row][col] == 1){
+                    addObject(new Desert(), col * 50, row * 50);
+                }
+        addObject(new Road(), 375, 533);
+        addObject(new Road(), 375, 223);
+        addObject(new SnakeEggs(), 375, 30);
+        addObject(new Snake(), 373, 709);
+        addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350),200);
+        addObject(new Pothole(), Greenfoot.getRandomNumber(350),190);
+        addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350),263);
+        addObject(new Pothole(), Greenfoot.getRandomNumber(350),263);
+        addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350), 510);
+        addObject(new Pothole(), Greenfoot.getRandomNumber(350), 500);
+        addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350), 573);
+        addObject(new Pothole(), Greenfoot.getRandomNumber(350), 573);
     }
+
     public void act()
     {
-         counter();
-         spawnCar();
-         spawnCar2();
-         spawnCar3();
-         spawnAmbulance();
-         gettingRandomNumber();
+        counter();
+        spawnCar();
+        spawnCar2();
+        spawnCar3();
+        spawnAmbulance();
+        gettingRandomNumber();
+        spawnPothole();
     } 
+
     public int counter()
     {
         if(count<=100){
@@ -66,6 +77,7 @@ public class Level1 extends World
             return count;
         }
     }
+
     public void spawnCar()
     {
         if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
@@ -85,6 +97,7 @@ public class Level1 extends World
             addObject(new CarToLeft(), 749, 255);
         }
     }
+
     public void spawnCar2()
     {
         if ((gettingRandomNumber() == 16 || gettingRandomNumber() == 17) && (counter()==25))
@@ -104,6 +117,7 @@ public class Level1 extends World
             addObject(new Car2ToLeft(), 749, 255);
         }
     }
+
     public void spawnCar3()
     {
         if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 14) && (counter()==75))
@@ -123,6 +137,7 @@ public class Level1 extends World
             addObject(new Car3ToLeft(), 749, 255);
         }
     }
+
     public void spawnAmbulance()
     {
         if (gettingRandomNumber() < 2 && (counter()==50))
@@ -142,9 +157,15 @@ public class Level1 extends World
             addObject(new AmbulanceToLeft(), 749, 255);
         }
     }
+
     public int gettingRandomNumber()
     {
         return Greenfoot.getRandomNumber(20);
+    }
+
+    public void spawnPothole()
+    {
+
     }
 }
     

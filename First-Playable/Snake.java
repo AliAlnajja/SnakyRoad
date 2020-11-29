@@ -137,6 +137,10 @@ public class Snake extends Actor
         {
             loseLife();
         }
+        if (isTouching(Pothole.class))
+        {
+            loseLife();
+        }
     }
     public void IsInWater()
     {

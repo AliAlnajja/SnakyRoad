@@ -13,11 +13,12 @@ public class Pothole extends Actor
      * Act - do whatever the Pothole wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Pothole(){
+        (this.image1).scale(50,30);
+        setImage(image1);
+    }
     public void act() 
     {
         
-    }
-    public Pothole(){
-        (this.image1).scale(50,20);
     }
 }
