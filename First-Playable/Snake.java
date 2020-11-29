@@ -15,6 +15,7 @@ public class Snake extends Actor
     private GreenfootImage image6 =  new GreenfootImage("snake6.png");
     private GreenfootImage image7 =  new GreenfootImage("snake7.png");
     private GreenfootImage image8 =  new GreenfootImage("snake8.png");
+    int life=3;
     int frame = 1;
     int skipFrame = 0;
     /**
@@ -40,8 +41,8 @@ public class Snake extends Actor
         ThirdLevel();
         TouchingCheck();
         IsInWater();
+        displayLife();
     }
-    
     public void animate(){
         if (skipFrame % 8 == 0){
         if (frame==1){
@@ -65,7 +66,6 @@ public class Snake extends Actor
         frame++;
         }
     }
-    
     public void checkKeyPressed()
     {
         if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
@@ -122,19 +122,19 @@ public class Snake extends Actor
     {
         if (isTouching(Car.class) || isTouching(CarToLeft.class))
         {
-            Greenfoot.stop();
+            loseLife();
         }
         if (isTouching(Car2.class) || isTouching(Car2ToLeft.class))
         {
-            Greenfoot.stop();
+            loseLife();
         }
         if (isTouching(Car3.class) || isTouching(Car3ToLeft.class))
         {
-            Greenfoot.stop();
+            loseLife();
         }
         if (isTouching(Ambulance.class) || isTouching(AmbulanceToLeft.class))
         {
-            Greenfoot.stop();
+            loseLife();
         }
     }
     public void IsInWater()
@@ -142,11 +142,25 @@ public class Snake extends Actor
         if (getWorld().getClass() == level2.class)
         {
             if(getY()>125 && getY()<325){
-                move(1);
+                setLocation(getX()+1,getY());
             }
             if(getY()>425 && getY()<625){
-                move(1);
+                setLocation(getX()+1,getY());
             }
         }
+    }
+    public void loseLife()
+    {
+        life--;
+        if(life==0)
+        {
+            Greenfoot.stop();
+        }
+        //getWorld().removeObject(this);
+        setLocation(373, 709);
+    }
+    public void displayLife()
+    {
+        getWorld().showText("Life "+life, 100, 100);
     }
 }
