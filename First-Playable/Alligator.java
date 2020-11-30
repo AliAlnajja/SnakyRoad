@@ -14,7 +14,9 @@ public class Alligator extends Actor
      */
     public void act() 
     {
-        move(2);
+        move(-6);
+        getImage().scale(40,40);
+        setRotation(180);
         if (getX() >= 748) 
         {
             getWorld().removeObject(this);

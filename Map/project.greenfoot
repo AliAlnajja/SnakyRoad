@@ -86,19 +86,11 @@ dependency8.type=UsesDependency
 dependency9.from=Level1
 dependency9.to=Road
 dependency9.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=442
-editor.fx.0.y=241
-height=997
-=======
 editor.fx.0.height=0
 editor.fx.0.width=0
 editor.fx.0.x=0
 editor.fx.0.y=0
-height=28
->>>>>>> f06586ae510cf3aaf97cc2bc4178cca32fa15861
+height=1176
 package.numDependencies=23
 package.numTargets=24
 project.charset=UTF-8
@@ -114,11 +106,7 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
-<<<<<<< HEAD
-simulation.speed=49
-=======
 simulation.speed=52
->>>>>>> f06586ae510cf3aaf97cc2bc4178cca32fa15861
 target1.height=50
 target1.name=Dirt
 target1.showInterface=false
@@ -288,14 +276,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-<<<<<<< HEAD
-width=1008
-world.lastInstantiated=CreditScene
-xPosition=453
-yPosition=103
-=======
-width=160
+width=1616
 world.lastInstantiated=Level1
 xPosition=0
 yPosition=0
->>>>>>> f06586ae510cf3aaf97cc2bc4178cca32fa15861

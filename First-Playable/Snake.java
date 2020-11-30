@@ -43,6 +43,7 @@ public class Snake extends Actor
         IsInWater();
         displayLife();
         checkIfIsAtEdge();
+        endgame();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -116,7 +117,7 @@ public class Snake extends Actor
         Actor CanaryEggs = getOneIntersectingObject(CanaryEggs.class);
         if (CanaryEggs != null)
         {
-            getWorld().showText("You Win", 10 ,10);
+            Greenfoot.setWorld(new GameScene());
         }
     }
     public void TouchingCheck()
@@ -141,6 +142,9 @@ public class Snake extends Actor
         {
             loseLife();
         }
+        //if (isTouching(Alligator.class)){
+           // loseLife();
+        //}
     }
     public void IsInWater()
     {

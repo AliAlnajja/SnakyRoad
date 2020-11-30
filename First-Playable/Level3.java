@@ -17,13 +17,13 @@ public class Level3 extends World
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,3,0,3,0,3,0,3,0,3,0,3,0,3,0,3},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {3,0,3,0,3,0,3,0,3,0,3,0,3,0,3,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
@@ -44,12 +44,20 @@ public class Level3 extends World
             else if (map[row][col] == 2){
                 addObject(new LavaLava(), col * 50, row * 50);
             }
-            else if (map[row][col] == 3){
-                addObject(new Lava(), col * 50, row * 50);
-            }
+            //else if (map[row][col] == 3){
+                //addObject(new Lava(), col * 50, row * 50);
+            //}
                 //addObject(new Road(), 375, 533);
                 //addObject(new Road(), 375, 223);
                 addObject(new CanaryEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
+                addObject(new Rock(),Greenfoot.getRandomNumber(750),200);
+                addObject(new Rock(),Greenfoot.getRandomNumber(750),300);
+                addObject(new Rock(),Greenfoot.getRandomNumber(750),550);
+                addObject(new Rock(),Greenfoot.getRandomNumber(750),600);
+               // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
+                //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
+               // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
+               // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
     }
 }
