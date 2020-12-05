@@ -16,7 +16,7 @@ public class Intro extends World
     public Intro()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(500, 400, 1); 
-        addObject(new PressS(),250,200);
+        super(750, 750, 1); 
+        addObject(new PressS(), 375, 375);
     }
 }

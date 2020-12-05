@@ -17,10 +17,9 @@ public class PressS extends Actor
       
     }    
     public PressS()
-{
-  getImage().scale(525,400);   
-}
-   
+    {
+    getImage().scale(750,750);
+    } 
 }
 
 

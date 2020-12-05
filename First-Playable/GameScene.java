@@ -16,6 +16,6 @@ public class GameScene extends World
     public GameScene()
     {    
         super(750, 750, 1); 
-        addObject(new CreditScene(), 375, 410);
+        addObject(new CreditScene(), 375, 375);
     }
 }

@@ -17,18 +17,18 @@ public class level2 extends World
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
     public level2()
@@ -49,22 +49,26 @@ public class level2 extends World
                 //addObject(new Road(), 375, 407);
                 addObject(new BirdsEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
+                //addObject(new Log(), 375, 375);
     }
     public void act()
     {
-        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter() == 6))
-        {
-            addObject(new Alligator(), 1, 507);
-        }
-        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
-        {
-            addObject(new Alligator(), 1, 195);
-        }
+        //if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter() == 6))
+        //{
+        //    addObject(new Alligator(), 1, 507);
+        //}
+        //if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
+        //{
+        //    addObject(new Alligator(), 1, 195);
+        //}
+        gettingRandomNumber();
+        spawnLogs();
         if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
         {
             //addObject(new Log(), 1, 140);
         }
-         counter();
+        counter();
+        setPaintOrder(Snake.class);
     } 
     public int counter()
     {
@@ -76,4 +80,14 @@ public class level2 extends World
             return count;
         }
     }
+    public int gettingRandomNumber()
+    {
+        return Greenfoot.getRandomNumber(20);
+    }
+    public void spawnLogs(){
+        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
+        {
+            addObject(new Log(), 1, 507);
+        }
+     }
 }

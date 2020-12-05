@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class CreditScene extends Actor
 {   
     public CreditScene(){
+       getImage().scale(800, 800);
        GreenfootImage image = getImage();
-       image.scale(image.getWidth()- 1500, image.getHeight()-2300);
+       image.scale(image.getWidth()-10, image.getHeight());
        setImage(image);
     }
     /**
@@ -19,6 +20,6 @@ public class CreditScene extends Actor
      */
     public void act() 
     {
-        getImage().scale(1009, 950);
+        
     }    
 }
