@@ -8,17 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CreditScene extends Actor
 {   
-    //public CreditScene(){
-      //  GreenfootImage image = getImage();
-       // image.scale(image.getWidth()- 10, image.getHeight()-10);
-       // setImage(image);
-    //}
+    public CreditScene(){
+       GreenfootImage image = getImage();
+       image.scale(image.getWidth()- 1500, image.getHeight()-2300);
+       setImage(image);
+    }
     /**
      * Act - do whatever the CreditScene wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        getImage().scale(950, 950);
+        getImage().scale(1009, 950);
     }    
 }
