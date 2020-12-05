@@ -18,12 +18,23 @@ public class Log extends Actor
     }
     public void act() 
     {
-        move(2);
+        //move(2);
+        
+        IsInWater();
         setLocation(getX(), getY());
         if (getX() >= 748) 
         {
             getWorld().removeObject(this);
         }
     }    
-}    
-
+    public void IsInWater()
+    {
+        if (getWorld().getClass() == level2.class)
+        {
+            if(getY()>75&&getY()<675)
+            {
+                setLocation(getX()+1,getY());
+            }
+        }
+    }    
+}

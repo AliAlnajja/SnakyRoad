@@ -41,7 +41,7 @@ public class MyWorld extends World
             else if (map[row][col] == 1)
                 addObject(new Desert(), col * 50, row * 50);
                 addObject(new Road(), 375, 533);
-                addObject(new Road(), 375, 223);
+                addObject(new Road(), 375, 223);  
     }
 }
     
