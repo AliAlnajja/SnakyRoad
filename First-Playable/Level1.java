@@ -83,18 +83,22 @@ public class Level1 extends World
         if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
         {
             addObject(new Car(), 1, 507);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 7 || gettingRandomNumber() == 18) && (counter()==74))
         {
             addObject(new Car(), 1, 195);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 8) && (counter()==0))
         {
             addObject(new CarToLeft(), 749, 570);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==24))
         {
             addObject(new CarToLeft(), 749, 255);
+            Greenfoot.playSound("CarHorn03.wav");
         }
     }
 
@@ -103,18 +107,22 @@ public class Level1 extends World
         if ((gettingRandomNumber() == 16 || gettingRandomNumber() == 17) && (counter()==25))
         {
             addObject(new Car2(), 1, 507);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 13 || gettingRandomNumber() == 4) && (counter()==99))
         {
             addObject(new Car2(), 1, 195);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 1 || gettingRandomNumber() == 12) && (counter()==74))
         {
             addObject(new Car2ToLeft(), 749, 570);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 5) && (counter()==99))
         {
             addObject(new Car2ToLeft(), 749, 255);
+            Greenfoot.playSound("CarHorn03.wav");
         }
     }
 
@@ -123,18 +131,22 @@ public class Level1 extends World
         if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 14) && (counter()==75))
         {
             addObject(new Car3(), 1, 507);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if (gettingRandomNumber() < 2 && (counter()==25))
         {
             addObject(new Car3(), 1, 195);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==99))
         {
             addObject(new Car3ToLeft(), 749, 570);
+            Greenfoot.playSound("CarHorn03.wav");
         }
         if ((gettingRandomNumber() == 6 || gettingRandomNumber() == 9) && (counter()==0))
         {
             addObject(new Car3ToLeft(), 749, 255);
+            Greenfoot.playSound("CarHorn03.wav");
         }
     }
 
@@ -143,18 +155,22 @@ public class Level1 extends World
         if (gettingRandomNumber() < 2 && (counter()==50))
         {
             addObject(new Ambulance(), 1, 507);
+            Greenfoot.playSound("AmbulanceSiren.wav");
         }
         if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 6) && (counter()==50))
         {
             addObject(new Ambulance(), 1, 195);
+            Greenfoot.playSound("AmbulanceSiren.wav");
         }
         if ((gettingRandomNumber() == 15 || gettingRandomNumber() == 16) && (counter()==49))
         {
             addObject(new AmbulanceToLeft(), 749, 570);
+            Greenfoot.playSound("AmbulanceSiren.wav");
         }
         if ((gettingRandomNumber() == 17 || gettingRandomNumber() == 18) && (counter()==49))
         {
             addObject(new AmbulanceToLeft(), 749, 255);
+            Greenfoot.playSound("AmbulanceSiren.wav");
         }
     }
 

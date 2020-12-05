@@ -20,5 +20,5 @@ public class Car3 extends Actor
         {
             getWorld().removeObject(this);
         }
-    }    
+    }   
 }
