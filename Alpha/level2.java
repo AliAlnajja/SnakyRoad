@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class level2 extends World
 {
-
+    
     /**
      * Constructor for objects of class Level2.
      * 
@@ -72,6 +72,7 @@ public class level2 extends World
             //addObject(new Log(), 1, 140);
         }
         counter();
+        spawnAlligator();
         setPaintOrder(Snake.class, Log.class, Water1.class);
     } 
     public int counter()
@@ -93,5 +94,10 @@ public class level2 extends World
         {
             addObject(new Log(), 1, 507);
         }
-     }
+    }
+    public void spawnAlligator(){
+        if (counter()==1){
+            addObject(new Alligator(), 1, 300);
+        }
+    }
 }

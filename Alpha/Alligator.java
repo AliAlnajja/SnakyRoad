@@ -16,10 +16,18 @@ public class Alligator extends Actor
     {
         move(-6);
         getImage().scale(40,40);
-        setRotation(180);
+        setRotation(135);
+        zigzag();
         if (getX() >= 748) 
         {
             getWorld().removeObject(this);
         }
-    }    
+    }
+    public void zigzag(){
+        if (this.getY()>250){
+            setRotation(225);
+        } else if(this.getY()<350){
+            setRotation(135);
+        }
+    }
 }

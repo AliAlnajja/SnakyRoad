@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ gettingRandomNumber()
 comment5.params=
 comment5.target=void\ spawnLogs()
-numComments=6
+comment6.params=
+comment6.target=void\ spawnAlligator()
+numComments=7
