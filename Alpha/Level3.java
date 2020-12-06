@@ -58,8 +58,9 @@ public class Level3 extends World
                 addObject(new Bat(),0,0);
                 addObject(new Bat(),0,0);
                 addObject(new Bat(),0,0);
-                addObject(new Bat(),0,0);
-                addObject(new Bat(),0,0);
+                addObject(new Bat(),750,0);
+                addObject(new Bat(),750,0);
+                addObject(new Bat(),750,0);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
