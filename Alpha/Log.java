@@ -14,12 +14,11 @@ public class Log extends Actor
      */
     
     public Log () {
-        getImage().scale(100,40 );
+        getImage().scale(50,50);
     }
     public void act() 
     {
         //move(2);
-        
         IsInWater();
         setLocation(getX(), getY());
         if (getX() >= 748) 
