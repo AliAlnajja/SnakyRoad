@@ -13,6 +13,7 @@ public class Level3 extends World
      * Constructor for objects of class Level3.
      * 
      */
+    private int timerForSound = 0;
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
@@ -65,5 +66,20 @@ public class Level3 extends World
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
+    }
+    public void act(){
+        timer();
+        batsChittering();
+    }
+    public void timer(){
+        timerForSound++;
+        if (timerForSound == 198){
+            timerForSound = 0;
+        }
+    }
+    public void batsChittering(){
+        if (timerForSound ==1){
+            Greenfoot.playSound("BatsChittering.wav");
+        }
     }
 }
