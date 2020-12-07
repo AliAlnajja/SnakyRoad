@@ -15,7 +15,7 @@ public class Alligator extends Actor
      */
     public void act() 
     {
-        move(-2);
+        move(-3);
         getImage().scale(40,40);
         zigzag();
         if (getX() >= 748) 
@@ -24,7 +24,7 @@ public class Alligator extends Actor
         }
     }
     public int counter(){
-        if(count<300){
+        if(count<120){
             return count++;
         }
         else{
@@ -33,9 +33,9 @@ public class Alligator extends Actor
         }
     }
     public void zigzag(){
-        if (counter()==0){
+       if (counter()==0){
             setRotation(225);
-        } else if(counter()==150){
+        } else if(counter()==60){
             setRotation(135);
         } 
     }

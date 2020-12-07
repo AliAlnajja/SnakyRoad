@@ -106,7 +106,7 @@ public class level2 extends World
         }
     }
      public int counter2(){
-        if(count2<=320){
+        if(count2<=150){
             return count2++;
         }
         else{

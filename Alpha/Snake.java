@@ -18,6 +18,7 @@ public class Snake extends Actor
     int life=3;
     int frame = 1;
     int skipFrame = 0;
+    int air = 250;
     /**
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -40,10 +41,12 @@ public class Snake extends Actor
         SecondLevel();
         ThirdLevel();
         TouchingCheck();
-        //IsInWater();
+        IsInWater();
         displayLife();
         checkIfIsAtEdge();
         endgame();
+        isOnLog();
+        isOnLog2();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -158,16 +161,24 @@ public class Snake extends Actor
            // loseLife();
         //}
     }
-    //public void IsInWater()
-    //{
-        //if (getWorld().getClass() == level2.class)
-        //{
-            //if(getY()>75&&getY()<675)
-            //{
-                //setLocation(getX()+1,getY());
-            //}
-        //}
-    //}
+    public void IsInWater()
+    {   
+        if (isTouching(Log.class)){
+            air=250;
+        } else if(isTouching(Water1.class)){
+            air--;
+        }
+        if (isTouching(Log2.class)){
+            air=250;
+        } else if(isTouching(Water1.class)){
+            air--;
+        }
+        if (air==0){
+            loseLife();
+            air=250;
+        }
+        getWorld().showText("Air: "+air, 100, 150);
+    }
     public void loseLife()
     {
         life--;
@@ -191,4 +202,17 @@ public class Snake extends Actor
             loseLife();
         }
     }
+    public void isOnLog()
+    {
+        if (isTouching(Log.class)){
+            setLocation(getX()+2,getY()); 
+        }
+    }
+    public void isOnLog2()
+    {
+        if (isTouching(Log2.class)){
+            setLocation(getX()-2,getY()); 
+        }
+    }
+    
 }
