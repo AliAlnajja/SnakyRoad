@@ -125,18 +125,22 @@ public class Snake extends Actor
         if (isTouching(Car.class) || isTouching(CarToLeft.class))
         {
             loseLife();
+            Greenfoot.playSound("CarBreaks.wav");
         }
         if (isTouching(Car2.class) || isTouching(Car2ToLeft.class))
         {
             loseLife();
+            Greenfoot.playSound("CarBreaks.wav");
         }
         if (isTouching(Car3.class) || isTouching(Car3ToLeft.class))
         {
             loseLife();
+            Greenfoot.playSound("CarBreaks.wav");
         }
         if (isTouching(Ambulance.class) || isTouching(AmbulanceToLeft.class))
         {
             loseLife();
+            Greenfoot.playSound("CarBreaks.wav");
         }
         if (isTouching(Pothole.class))
         {
