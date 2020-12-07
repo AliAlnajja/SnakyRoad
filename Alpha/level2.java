@@ -14,6 +14,7 @@ public class level2 extends World
      * 
      */
     private int count = 0;
+    private int count2 = 0;
     private int timerInSeconds = 0; // this is the timer for water sound
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -104,9 +105,18 @@ public class level2 extends World
             addObject(new Log(), 1, 507);
         }
     }
+     public int counter2(){
+        if(count2<=320){
+            return count2++;
+        }
+        else{
+            count2 = 0;
+            return count2;
+        }
+    }
     public void spawnAlligator(){
-        if (counter()==1){
-            addObject(new Alligator(), 1, 300);
+        if (counter2()==1){
+            addObject(new Alligator(), 1, 350);
         }
     }
     public void timer(){

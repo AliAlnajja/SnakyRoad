@@ -8,26 +8,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Alligator extends Actor
 {
+    private int count = 0;
     /**
      * Act - do whatever the Alligator wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        move(-6);
+        move(-2);
         getImage().scale(40,40);
-        setRotation(135);
         zigzag();
         if (getX() >= 748) 
         {
             getWorld().removeObject(this);
         }
     }
-    public void zigzag(){
-        if (this.getY()>250){
-            setRotation(225);
-        } else if(this.getY()<350){
-            setRotation(135);
+    public int counter(){
+        if(count<300){
+            return count++;
         }
+        else{
+            count = 0;
+            return count;
+        }
+    }
+    public void zigzag(){
+        if (counter()==0){
+            setRotation(225);
+        } else if(counter()==150){
+            setRotation(135);
+        } 
     }
 }
