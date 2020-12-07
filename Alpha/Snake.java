@@ -142,6 +142,10 @@ public class Snake extends Actor
         {
             loseLife();
         }
+        if (isTouching(Bat.class))
+        {
+            loseLife();
+        }
         //if (isTouching(Alligator.class)){
            // loseLife();
         //}
