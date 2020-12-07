@@ -8,5 +8,5 @@ comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ timer()
 comment4.params=
-comment4.target=void\ batsChittering()
+comment4.target=void\ batsChitteringAndLavaSound()
 numComments=5

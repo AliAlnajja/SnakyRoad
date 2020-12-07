@@ -69,7 +69,7 @@ public class Level3 extends World
     }
     public void act(){
         timer();
-        batsChittering();
+        batsChitteringAndLavaSound();
     }
     public void timer(){
         timerForSound++;
@@ -77,9 +77,10 @@ public class Level3 extends World
             timerForSound = 0;
         }
     }
-    public void batsChittering(){
+    public void batsChitteringAndLavaSound(){
         if (timerForSound ==1){
             Greenfoot.playSound("BatsChittering.wav");
+            Greenfoot.playSound("LavaSoundEffect.wav");
         }
     }
 }
