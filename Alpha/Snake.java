@@ -170,7 +170,7 @@ public class Snake extends Actor
         if(life==0)
         {
             Greenfoot.stop();
-            getworld().showText("Game Over", 375,375);
+            getWorld().showText("Game Over", 375,375);
         }
         //getWorld().removeObject(this);
         setLocation(373, 709);
