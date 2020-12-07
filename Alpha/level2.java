@@ -14,6 +14,7 @@ public class level2 extends World
      * 
      */
     private int count = 0;
+    private int timerInSeconds = 0; // this is the timer for water sound
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
@@ -74,6 +75,8 @@ public class level2 extends World
         counter();
         spawnAlligator();
         setPaintOrder(Snake.class, Log.class, Water1.class);
+        timer();
+        playingWaterSound();
     } 
     public int counter()
     {
@@ -98,6 +101,17 @@ public class level2 extends World
     public void spawnAlligator(){
         if (counter()==1){
             addObject(new Alligator(), 1, 300);
+        }
+    }
+    public void timer(){
+        timerInSeconds++;
+        if (timerInSeconds == 55*6 - 110){
+            timerInSeconds =0;
+        }
+    }
+    public void playingWaterSound(){
+        if (timerInSeconds == 1){
+            Greenfoot.playSound("WaterSound.wav");
         }
     }
 }
