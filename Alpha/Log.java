@@ -12,28 +12,44 @@ public class Log extends Actor
      * Act - do whatever the Log wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+    int count;
+    String Log;
     public Log () {
-        getImage().scale(50,50);
+        getImage().scale(100,50);
     }
     public void act() 
     {
         //move(2);
-        IsInWater();
+        //IsInWater();
         setLocation(getX(), getY());
-        if (getX() >= 748) 
-        {
-            getWorld().removeObject(this);
-        }
+        count ++;
+        logMovement();
+        //if (getX() >= 748) 
+        //{
+            //getWorld().removeObject(this);
+        //}
     }    
-    public void IsInWater()
+    //public void IsInWater()
+    //{
+        //if (getWorld().getClass() == level2.class)
+        //{
+            //if(getY()>75&&getY()<675)
+            //{
+               // setLocation(getX()+1,getY());
+            //}
+        //}
+    //}   
+    public int gettingRandomNumber()
     {
-        if (getWorld().getClass() == level2.class)
-        {
-            if(getY()>75&&getY()<675)
-            {
-                setLocation(getX()+1,getY());
-            }
+        return Greenfoot.getRandomNumber(20);
+    }
+    public void logMovement(){
+        if (count % 10 == 0 && this.Log == Log){
+            setLocation(getX() + 20, getY());
         }
-    }    
+        if (getX() == 0)
+        setLocation(getWorld().getWidth()-2, getY());
+        if(getX() == getWorld().getWidth()-1)
+        setLocation(1, getY());
+    }
 }

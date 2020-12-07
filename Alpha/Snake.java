@@ -40,7 +40,7 @@ public class Snake extends Actor
         SecondLevel();
         ThirdLevel();
         TouchingCheck();
-        IsInWater();
+        //IsInWater();
         displayLife();
         checkIfIsAtEdge();
         endgame();
@@ -146,16 +146,16 @@ public class Snake extends Actor
            // loseLife();
         //}
     }
-    public void IsInWater()
-    {
-        if (getWorld().getClass() == level2.class)
-        {
-            if(getY()>75&&getY()<675)
-            {
-                setLocation(getX()+1,getY());
-            }
-        }
-    }
+    //public void IsInWater()
+    //{
+        //if (getWorld().getClass() == level2.class)
+        //{
+            //if(getY()>75&&getY()<675)
+            //{
+                //setLocation(getX()+1,getY());
+            //}
+        //}
+    //}
     public void loseLife()
     {
         life--;

@@ -18,18 +18,18 @@ public class level2 extends World
     int [][] map = 
            {{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
-            {3,3,2,2,3,2,2,2,3,2,2,2,3,3,2,2},
-            {2,3,2,2,2,3,2,2,2,3,3,2,2,2,3,3},
-            {2,2,2,3,3,3,2,2,2,2,2,2,2,2,2,2},
-            {3,2,3,2,2,2,2,2,3,2,2,3,3,2,3,3},
-            {3,3,2,2,3,3,2,2,2,3,2,2,2,3,3,3},
+            {2,4,2,2,2,4,2,2,2,2,2,2,4,2,2,2},
+            {2,2,3,2,2,2,3,2,2,2,2,3,2,2,2,2},
+            {2,2,2,2,4,2,2,2,4,2,2,2,2,4,2,2},
+            {2,2,3,2,2,2,3,2,2,2,3,2,2,2,3,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {3,3,2,2,2,3,2,2,3,3,2,2,2,3,2,3},
-            {2,2,3,2,2,2,3,3,2,2,2,3,3,2,2,3},
-            {3,3,2,2,2,3,2,2,3,3,2,2,2,3,3,3},
-            {2,3,3,2,2,2,3,3,2,2,2,3,3,2,2,2},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,2,4,2,2,2,2,2,2,4,2,2,2,4,2},
+            {2,2,2,2,3,2,2,2,2,3,2,2,2,3,2,2},
+            {2,2,4,2,2,2,2,4,2,2,2,4,2,2,2,2},
+            {2,3,2,2,2,3,2,2,2,3,2,2,2,3,2,2},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
     public level2()
@@ -49,6 +49,12 @@ public class level2 extends World
             else if (map[row][col] == 3){
                 addObject(new Water1(), col * 50, row * 50);
                 addObject(new Log(), col * 50, row * 50);
+                setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
+            }
+            else if (map[row][col] == 4){
+                addObject(new Water1(), col * 50, row * 50);
+                addObject(new Log2(), col * 50, row * 50);
+                setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
                 //addObject(new Road(), 375, 556);
                 //addObject(new Road(), 375, 407);
@@ -66,7 +72,7 @@ public class level2 extends World
         //{
         //    addObject(new Alligator(), 1, 195);
         //}
-        gettingRandomNumber();
+        //gettingRandomNumber();
         //spawnLogs();
         if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
         {
@@ -74,7 +80,7 @@ public class level2 extends World
         }
         counter();
         spawnAlligator();
-        setPaintOrder(Snake.class, Log.class, Water1.class);
+        setPaintOrder(Snake.class, Log.class,Log2.class, Alligator.class, Water1.class);
         timer();
         playingWaterSound();
     } 
