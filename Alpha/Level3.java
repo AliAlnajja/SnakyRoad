@@ -58,10 +58,10 @@ public class Level3 extends World
                 addObject(new Bat(),750,0);
                 addObject(new Bat(),750,0);
                 addObject(new Bat(),750,0);
-                addObject(new Rock2(),250,275);
-                addObject(new Rock2(),650,275);
-                addObject(new Rock2(),100,575);
-                addObject(new Rock2(),500,575);
+                addObject(new Rock2(),Greenfoot.getRandomNumber(375),275);
+                addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),275);
+                addObject(new Rock2(),Greenfoot.getRandomNumber(375),575);
+                addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),575);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
@@ -89,19 +89,31 @@ public class Level3 extends World
         counter();
         if (counter()==1)
         {
-            addObject(new Rock(),1,200);
-            addObject(new Rock(),1,350);
-            addObject(new Rock(),1,500);
-            addObject(new Rock(),1,650);
+            if(gettingRandomNumber()==2){
+                addObject(new Rock(),1,200);
+            }
+            if(gettingRandomNumber()==2){
+                addObject(new Rock(),1,350);
+            }
+            if(gettingRandomNumber()==2){
+                addObject(new Rock(),1,500);
+            }
+            if(gettingRandomNumber()==2){
+                addObject(new Rock(),1,650);
+            }
         }
     }
     public int counter(){
-        if(count<=150){
+        if(count<=10){
             return count++;
         }
         else{
             count = 0;
             return count;
         }
+    }
+    public int gettingRandomNumber()
+    {
+        return Greenfoot.getRandomNumber(20);
     }
 }
