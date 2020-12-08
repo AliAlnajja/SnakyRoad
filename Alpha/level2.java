@@ -75,15 +75,12 @@ public class level2 extends World
         //}
         //gettingRandomNumber();
         //spawnLogs();
-        if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter()==5))
-        {
-            //addObject(new Log(), 1, 140);
-        }
         counter();
         spawnAlligator();
         setPaintOrder(Snake.class, Log.class,Log2.class, Alligator.class, Water1.class);
         timer();
         playingWaterSound();
+        
     } 
     public int counter()
     {

@@ -64,7 +64,7 @@ public class Level1 extends World
         spawnCar3();
         spawnAmbulance();
         gettingRandomNumber();
-        spawnPothole();
+        
     } 
 
     public int counter()
@@ -177,11 +177,6 @@ public class Level1 extends World
     public int gettingRandomNumber()
     {
         return Greenfoot.getRandomNumber(20);
-    }
-
-    public void spawnPothole()
-    {
-
     }
 }
     

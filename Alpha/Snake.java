@@ -214,5 +214,10 @@ public class Snake extends Actor
             setLocation(getX()-2,getY()); 
         }
     }
+    public void playBgm(){
+        if (this.getWorld().getClass()==Level1.class){
+            Greenfoot.playSound("Level1Bgm.mp3");
+        }
+    }
     
 }
