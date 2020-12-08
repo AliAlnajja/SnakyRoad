@@ -14,10 +14,14 @@ public class Rock extends Actor
      */
     public Rock()
     {
-        getImage().scale(50,50);
+        getImage().scale(60,60);
     }
     public void act() 
     {
-        // Add your action code here.
+        if (getX() >= 748) 
+        {
+            getWorld().removeObject(this);
+        }
+        move(3);
     }    
 }

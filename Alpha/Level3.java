@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -31,6 +32,7 @@ public class Level3 extends World
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
+    private int count = 0;
     public Level3()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -48,20 +50,18 @@ public class Level3 extends World
             //else if (map[row][col] == 3){
                 //addObject(new Lava(), col * 50, row * 50);
             //}
-                //addObject(new Road(), 375, 533);
-                //addObject(new Road(), 375, 223);
                 addObject(new CanaryEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
-                addObject(new Rock(),Greenfoot.getRandomNumber(750),200);
-                addObject(new Rock(),Greenfoot.getRandomNumber(750),300);
-                addObject(new Rock(),Greenfoot.getRandomNumber(750),550);
-                addObject(new Rock(),Greenfoot.getRandomNumber(750),600);
                 addObject(new Bat(),0,0);
                 addObject(new Bat(),0,0);
                 addObject(new Bat(),0,0);
                 addObject(new Bat(),750,0);
                 addObject(new Bat(),750,0);
                 addObject(new Bat(),750,0);
+                addObject(new Rock2(),250,275);
+                addObject(new Rock2(),650,275);
+                addObject(new Rock2(),100,575);
+                addObject(new Rock2(),500,575);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
@@ -70,6 +70,7 @@ public class Level3 extends World
     public void act(){
         timer();
         batsChitteringAndLavaSound();
+        spawnMovingRock();
     }
     public void timer(){
         timerForSound++;
@@ -81,6 +82,26 @@ public class Level3 extends World
         if (timerForSound ==1){
             Greenfoot.playSound("BatsChittering.wav");
             Greenfoot.playSound("LavaSoundEffect.wav");
+        }
+    }
+    public void spawnMovingRock()
+    {
+        counter();
+        if (counter()==1)
+        {
+            addObject(new Rock(),1,200);
+            addObject(new Rock(),1,350);
+            addObject(new Rock(),1,500);
+            addObject(new Rock(),1,650);
+        }
+    }
+    public int counter(){
+        if(count<=150){
+            return count++;
+        }
+        else{
+            count = 0;
+            return count;
         }
     }
 }
