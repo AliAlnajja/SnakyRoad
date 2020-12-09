@@ -71,6 +71,7 @@ public class Level3 extends World
         timer();
         batsChitteringAndLavaSound();
         spawnMovingRock();
+        seeOnTop();
     }
     public void timer(){
         timerForSound++;
@@ -104,7 +105,7 @@ public class Level3 extends World
         }
     }
     public int counter(){
-        if(count<=10){
+        if(count<=15){
             return count++;
         }
         else{
@@ -115,5 +116,8 @@ public class Level3 extends World
     public int gettingRandomNumber()
     {
         return Greenfoot.getRandomNumber(20);
+    }
+    public void seeOnTop(){
+        setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
     }
 }

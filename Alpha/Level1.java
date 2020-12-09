@@ -54,6 +54,7 @@ public class Level1 extends World
         addObject(new Pothole(), Greenfoot.getRandomNumber(350), 500);
         addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350), 573);
         addObject(new Pothole(), Greenfoot.getRandomNumber(350), 573);
+        prepare();
     }
 
     public void act()
@@ -64,7 +65,6 @@ public class Level1 extends World
         spawnCar3();
         spawnAmbulance();
         gettingRandomNumber();
-        
     } 
 
     public int counter()
@@ -177,6 +177,26 @@ public class Level1 extends World
     public int gettingRandomNumber()
     {
         return Greenfoot.getRandomNumber(20);
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        AmbulanceToLeft ambulanceToLeft = new AmbulanceToLeft();
+        addObject(ambulanceToLeft,717,579);
+        Car2ToLeft car2ToLeft = new Car2ToLeft();
+        addObject(car2ToLeft,291,579);
+        Car3 car3 = new Car3();
+        addObject(car3,45,502);
+        CarToLeft carToLeft = new CarToLeft();
+        addObject(carToLeft,710,262);
+        Car car = new Car();
+        addObject(car,37,190);
+        AmbulanceToLeft ambulanceToLeft2 = new AmbulanceToLeft();
+        addObject(ambulanceToLeft2,161,264);
     }
 }
     

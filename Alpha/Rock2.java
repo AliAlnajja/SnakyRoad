@@ -14,7 +14,7 @@ public class Rock2 extends Actor
      */
     public Rock2()
     {
-        getImage().scale(160,160);
+        //getImage().scale(160,160);
     }
     public void act() 
     {

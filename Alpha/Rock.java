@@ -14,7 +14,7 @@ public class Rock extends Actor
      */
     public Rock()
     {
-        getImage().scale(60,60);
+        //getImage().scale(60,60);
     }
     public void act() 
     {
@@ -22,6 +22,6 @@ public class Rock extends Actor
         {
             getWorld().removeObject(this);
         }
-        move(3);
+        move(1);
     }    
 }

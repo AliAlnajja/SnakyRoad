@@ -15,7 +15,7 @@ public class Bat extends Actor
      */
     public Bat()
     {
-        (this.image1).scale(10,10);
+        //(this.image1).scale(10,10);
     } 
     public void act() 
     {
@@ -24,4 +24,5 @@ public class Bat extends Actor
             setRotation(Greenfoot.getRandomNumber(360));
         }
     } 
+    
 }

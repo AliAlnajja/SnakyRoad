@@ -47,6 +47,7 @@ public class Snake extends Actor
         endgame();
         isOnLog();
         isOnLog2();
+        touchingRock();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -217,6 +218,11 @@ public class Snake extends Actor
     public void playBgm(){
         if (this.getWorld().getClass()==Level1.class){
             Greenfoot.playSound("Level1Bgm.mp3");
+        }
+    }
+    public void touchingRock(){
+        if (isTouching(Rock.class)){
+            setLocation(getX()+1,getY());
         }
     }
     
