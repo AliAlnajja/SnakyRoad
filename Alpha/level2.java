@@ -54,7 +54,7 @@ public class level2 extends World
             }
             else if (map[row][col] == 4){
                 addObject(new Water1(), col * 50, row * 50);
-                addObject(new Log2(), col * 50, row * 50);
+                //addObject(new Log2(), col * 50, row * 50);
                 setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
                 //addObject(new Road(), 375, 556);
@@ -126,5 +126,8 @@ public class level2 extends World
         if (timerInSeconds == 1){
             Greenfoot.playSound("WaterSound.wav");
         }
+    }
+    public void lookAtSnake(){
+        
     }
 }

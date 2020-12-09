@@ -19,6 +19,8 @@ public class Snake extends Actor
     int frame = 1;
     int skipFrame = 0;
     int air = 250;
+    int burn = 10;
+    
     /**
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -48,6 +50,7 @@ public class Snake extends Actor
         isOnLog();
         isOnLog2();
         touchingRock();
+        isInLava();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -179,6 +182,27 @@ public class Snake extends Actor
             air=250;
         }
         getWorld().showText("Air: "+air, 100, 150);
+    }
+    public void isInLava()
+    {
+        if(isTouching(Rock.class)){
+            burn=10;
+        } else if (isTouching(LavaLava.class)){
+           burn--;
+        }
+        if(isTouching(Rock2.class)){
+            burn=10;
+        } else if (isTouching(LavaLava.class)){
+            burn--;
+        }
+        if (burn==0){
+            loseLife();
+            burn=10;
+        }
+        if (isTouching(LavaLava.class)==false){
+            burn=10;
+        }
+        getWorld().showText("Burn: "+burn, 200, 200);
     }
     public void loseLife()
     {
