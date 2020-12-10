@@ -156,6 +156,7 @@ public class Snake extends Actor
         if (isTouching(Bat.class))
         {
             loseLife();
+            
         }
         if (isTouching(Alligator.class))
         {
@@ -210,9 +211,7 @@ public class Snake extends Actor
             Greenfoot.stop();
             getWorld().showText("Game Over", 375,375);
         }
-        //getWorld().removeObject(this);
         setLocation(373, 709);
-        
     }
     public void displayLife()
     {
