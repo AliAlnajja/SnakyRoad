@@ -20,16 +20,16 @@ public class Level3 extends World
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {2,2,2,2,3,2,2,2,2,3,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,3,2,2,2,2,2,2,2,2,2,2,3,2,2},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {2,2,2,3,2,2,2,2,2,2,2,3,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
             {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {2,2,2,2,2,2,3,2,2,2,2,2,2,2,3,2},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
     private int count = 0;
@@ -47,6 +47,11 @@ public class Level3 extends World
             else if (map[row][col] == 2){
                 addObject(new LavaLava(), col * 50, row * 50);
             }
+            else if (map[row][col] == 3){
+                addObject(new LavaLava(), col * 50, row * 50);
+                addObject(new Rock(), col * 50, row * 50); 
+                setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
+            }
             //else if (map[row][col] == 3){
                 //addObject(new Lava(), col * 50, row * 50);
             //}
@@ -62,10 +67,10 @@ public class Level3 extends World
                 addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),275);
                 addObject(new Rock2(),Greenfoot.getRandomNumber(375),575);
                 addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),575);
-                addObject(new Rock(),+Greenfoot.getRandomNumber(375),650);
-                addObject(new Rock(),375+Greenfoot.getRandomNumber(375),500);
-                addObject(new Rock(),Greenfoot.getRandomNumber(375),350);
-                addObject(new Rock(),375+Greenfoot.getRandomNumber(375),200);
+               //addObject(new Rock(),+Greenfoot.getRandomNumber(375),650);
+                //addObject(new Rock(),375+Greenfoot.getRandomNumber(375),500);
+                //addObject(new Rock(),Greenfoot.getRandomNumber(375),350);
+                //addObject(new Rock(),375+Greenfoot.getRandomNumber(375),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
@@ -74,7 +79,7 @@ public class Level3 extends World
     public void act(){
         timer();
         batsChitteringAndLavaSound();
-        spawnMovingRock();
+        //spawnMovingRock();
         seeOnTop();
         setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
     }
@@ -90,25 +95,25 @@ public class Level3 extends World
             Greenfoot.playSound("LavaSoundEffect.wav");
         }
     }
-    public void spawnMovingRock()
-    {
-        counter();
-        if (counter()==1)
-        {
-            if(gettingRandomNumber()==2){
-                addObject(new Rock(),1,200);
-            }
-            if(gettingRandomNumber()==2){
-                addObject(new Rock(),1,350);
-            }
-            if(gettingRandomNumber()==2){
-                addObject(new Rock(),1,500);
-            }
-            if(gettingRandomNumber()==2){
-                addObject(new Rock(),1,650);
-            }
-        }
-    }
+    //public void spawnMovingRock()
+    //{
+        //counter();
+        //if (counter()==1)
+        //{
+            //if(gettingRandomNumber()==2){
+                //addObject(new Rock(),1,200);
+            //}
+            //if(gettingRandomNumber()==2){
+                //addObject(new Rock(),1,350);
+            //}
+            //if(gettingRandomNumber()==2){
+                //addObject(new Rock(),1,500);
+            //}
+            //if(gettingRandomNumber()==2){
+                //addObject(new Rock(),1,650);
+            //}
+        //}
+    //}
     public int counter(){
         if(count<=15){
             return count++;

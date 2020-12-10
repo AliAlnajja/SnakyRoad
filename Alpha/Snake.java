@@ -25,6 +25,7 @@ public class Snake extends Actor
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public Snake()
     {
         (this.image1).scale(50,20);
@@ -35,6 +36,8 @@ public class Snake extends Actor
         (this.image6).scale(50,20);
         (this.image7).scale(50,20);
         (this.image8).scale(50,20);
+        getImage().scale(50,20);
+        setRotation(270);
     }
     public void act() 
     {
@@ -124,7 +127,7 @@ public class Snake extends Actor
         Actor CanaryEggs = getOneIntersectingObject(CanaryEggs.class);
         if (CanaryEggs != null)
         {
-            Greenfoot.setWorld(new GameScene());
+            Greenfoot.setWorld(new GameCreditScene());
         }
     }
     public void TouchingCheck()
@@ -156,7 +159,7 @@ public class Snake extends Actor
         if (isTouching(Bat.class))
         {
             loseLife();
-            
+            //Greenfoot.setWorld(new Level3());
         }
         if (isTouching(Alligator.class))
         {
@@ -178,7 +181,7 @@ public class Snake extends Actor
         } else if(isTouching(Water1.class)){
             air--;
         }
-        if (air==0){
+        if (air<=0){
             loseLife();
             air=250;
         }
@@ -195,9 +198,10 @@ public class Snake extends Actor
         } else if (isTouching(LavaLava.class)){
             burn++;
         }
-        if (burn==10){
+        if (burn>=10){
             loseLife();
             burn=0;
+            //Greenfoot.setWorld(new Level3());
         }
         if (isTouching(LavaLava.class)==false){
             burn=0;
