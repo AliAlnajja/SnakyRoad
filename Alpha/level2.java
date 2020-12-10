@@ -136,7 +136,4 @@ public class level2 extends World
             Greenfoot.playSound("WaterSound.wav");
         }
     }
-    public void lookAtSnake(){
-        
-    }
 }
