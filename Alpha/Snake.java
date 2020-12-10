@@ -19,6 +19,8 @@ public class Snake extends Actor
     int frame = 1;
     int skipFrame = 0;
     int air = 250;
+    int burn = 0;
+    
     /**
      * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -42,12 +44,13 @@ public class Snake extends Actor
         ThirdLevel();
         TouchingCheck();
         IsInWater();
-        displayLife();
         checkIfIsAtEdge();
         endgame();
         isOnLog();
         isOnLog2();
         touchingRock();
+        worldDisplay();
+        isInLava();
     }
     public void animate(){
         if (skipFrame % 8 == 0){
@@ -153,6 +156,7 @@ public class Snake extends Actor
         if (isTouching(Bat.class))
         {
             loseLife();
+            
         }
         if (isTouching(Alligator.class))
         {
@@ -178,7 +182,26 @@ public class Snake extends Actor
             loseLife();
             air=250;
         }
-        getWorld().showText("Air: "+air, 100, 150);
+    }
+    public void isInLava()
+    {
+        if(isTouching(Rock.class)){
+            burn=0;
+        } else if (isTouching(LavaLava.class)){
+            burn++;
+        }
+        if(isTouching(Rock2.class)){
+            burn=0;
+        } else if (isTouching(LavaLava.class)){
+            burn++;
+        }
+        if (burn==10){
+            loseLife();
+            burn=0;
+        }
+        if (isTouching(LavaLava.class)==false){
+            burn=0;
+        }
     }
     public void loseLife()
     {
@@ -188,9 +211,7 @@ public class Snake extends Actor
             Greenfoot.stop();
             getWorld().showText("Game Over", 375,375);
         }
-        //getWorld().removeObject(this);
         setLocation(373, 709);
-        
     }
     public void displayLife()
     {
@@ -225,5 +246,17 @@ public class Snake extends Actor
             setLocation(getX()+1,getY());
         }
     }
-    
+    public void worldDisplay(){
+        if (getWorld().getClass()==level2.class){
+            displayLife();
+            getWorld().showText("Air: "+air, 100, 120);
+        }
+        if (getWorld().getClass()==Level1.class){
+            displayLife();
+        }
+        if (getWorld().getClass()==Level3.class){
+            displayLife();
+            getWorld().showText("Burn: "+burn+"/10", 100, 120);
+        }
+    } 
 }

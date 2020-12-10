@@ -24,5 +24,4 @@ public class Bat extends Actor
             setRotation(Greenfoot.getRandomNumber(360));
         }
     } 
-    
 }

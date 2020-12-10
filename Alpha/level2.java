@@ -54,14 +54,11 @@ public class level2 extends World
             }
             else if (map[row][col] == 4){
                 addObject(new Water1(), col * 50, row * 50);
-                addObject(new Log2(), col * 50, row * 50);
+                //addObject(new Log2(), col * 50, row * 50);
                 setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
-                //addObject(new Road(), 375, 556);
-                //addObject(new Road(), 375, 407);
                 addObject(new BirdsEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
-                //addObject(new Log(), 375, 375);
     }
     public void act()
     {
@@ -103,7 +100,7 @@ public class level2 extends World
         }
     }
      public int counter2(){
-        if(count2<=150){
+        if(count2<=400){
             return count2++;
         }
         else{
@@ -111,10 +108,19 @@ public class level2 extends World
             return count2;
         }
     }
-    public void spawnAlligator(){
+    public void spawnAlligator2(){
         if (counter2()==1){
-            addObject(new Alligator(), 1, 350);
+            addObject(new Alligator(), 1, 300);
         }
+    }
+    public void spawnAlligator1(){
+        if (counter2()==200){
+            addObject(new Alligator(), 1, 425);
+        }
+    }
+    public void spawnAlligator(){
+        spawnAlligator1();
+        spawnAlligator2();
     }
     public void timer(){
         timerInSeconds++;

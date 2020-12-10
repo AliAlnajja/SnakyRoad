@@ -62,6 +62,10 @@ public class Level3 extends World
                 addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),275);
                 addObject(new Rock2(),Greenfoot.getRandomNumber(375),575);
                 addObject(new Rock2(),375+Greenfoot.getRandomNumber(375),575);
+                addObject(new Rock(),+Greenfoot.getRandomNumber(375),650);
+                addObject(new Rock(),375+Greenfoot.getRandomNumber(375),500);
+                addObject(new Rock(),Greenfoot.getRandomNumber(375),350);
+                addObject(new Rock(),375+Greenfoot.getRandomNumber(375),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
@@ -72,6 +76,7 @@ public class Level3 extends World
         batsChitteringAndLavaSound();
         spawnMovingRock();
         seeOnTop();
+        setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
     }
     public void timer(){
         timerForSound++;
