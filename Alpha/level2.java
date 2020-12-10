@@ -57,11 +57,8 @@ public class level2 extends World
                 //addObject(new Log2(), col * 50, row * 50);
                 setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
-                //addObject(new Road(), 375, 556);
-                //addObject(new Road(), 375, 407);
                 addObject(new BirdsEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
-                //addObject(new Log(), 375, 375);
     }
     public void act()
     {
