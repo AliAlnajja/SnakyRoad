@@ -26,9 +26,11 @@ public class MainMenu extends World
      */
     private void prepare()
     {
-        Instructions instructions = new Instructions();
-        addObject(instructions,403,319);
         Play play = new Play();
-        addObject(play,401,235);
+        addObject(play,400,235);
+        Instructions instructions = new Instructions();
+        addObject(instructions,400,319);
+        Credit credit = new Credit();
+        addObject(credit,400,407);
     }
 }
