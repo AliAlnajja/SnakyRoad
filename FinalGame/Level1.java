@@ -31,7 +31,7 @@ public class Level1 extends World
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
-    public Level1()
+    public Level1() //Consctructor for level1
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1); 
@@ -60,8 +60,7 @@ public class Level1 extends World
                 Border border2 = new Border();
                 addObject(border2, 750, 375);
     }
-
-    public void act()
+    public void act() //Act method for level 1
     {
         counter();
         spawnCar();
@@ -71,7 +70,6 @@ public class Level1 extends World
         gettingRandomNumber();
         setPaintOrder(Border.class);
     } 
-
     public int counter()
     { // 825 would be around 55 cycles per second multiplied by 30 seconds, so this counter is about 15 seconds
         if(count<=825){
@@ -82,8 +80,7 @@ public class Level1 extends World
             return count;
         }
     }
-
-    public void spawnCar()
+    public void spawnCar() //Method for randomly spawning car1
     {
         if (/*(gettingRandomNumber() == 5 || gettingRandomNumber() == 8) &&*/ (counter()==57))
         {
@@ -106,8 +103,7 @@ public class Level1 extends World
             Greenfoot.playSound("CarHorn03.wav");
         }
     }
-
-    public void spawnCar2()
+    public void spawnCar2() //method for randomly spawning car2
     {
         if (/*(gettingRandomNumber() == 6 || gettingRandomNumber() == 7) &&*/ (counter()==310))
         {
@@ -131,7 +127,7 @@ public class Level1 extends World
         }
     }
 
-    public void spawnCar3()
+    public void spawnCar3() //method for randonly spawning car3
     {
         if (/*(gettingRandomNumber() == 3 || gettingRandomNumber() == 4) &&*/ (counter()==500))
         {
@@ -154,8 +150,7 @@ public class Level1 extends World
             Greenfoot.playSound("CarHorn03.wav");
         }
     }
-
-    public void spawnAmbulance()
+     public void spawnAmbulance() //method for randonly spawning ambulances
     {
         if (/*gettingRandomNumber() < 2 &&*/ (counter()==700))
         {
@@ -178,12 +173,10 @@ public class Level1 extends World
             Greenfoot.playSound("AmbulanceSiren.wav");
         }
     }
-
-    public int gettingRandomNumber()
+    public int gettingRandomNumber() //Random number generator for 1-10
     {
         return Greenfoot.getRandomNumber(10);
     }
-
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

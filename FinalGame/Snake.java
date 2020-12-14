@@ -26,7 +26,7 @@ public class Snake extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Snake()
+    public Snake() //Consturctor for the snake
     {
         (this.image1).scale(50,20);
         (this.image2).scale(50,20);
@@ -39,7 +39,7 @@ public class Snake extends Actor
         getImage().scale(50,20);
         setRotation(270);
     }
-    public void act() 
+    public void act() //Act method for the snake
     {
         checkKeyPressed();
         skipFrame++;
@@ -50,12 +50,11 @@ public class Snake extends Actor
         checkIfIsAtEdge();
         endgame();
         isOnLog();
-        isOnLog2();
         touchingRock();
         worldDisplay();
         isInLava();
     }
-    public void animate(){
+    public void animate(){ //Animation movement
         if (skipFrame % 8 == 0){
         if (frame==1){
             setImage(image2);
@@ -78,7 +77,7 @@ public class Snake extends Actor
         frame++;
         }
     }
-    public void checkKeyPressed()
+    public void checkKeyPressed() //Movement method
     {
         if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
         {
@@ -105,7 +104,7 @@ public class Snake extends Actor
             animate();
         }
     }
-    public void SecondLevel()
+    public void SecondLevel() //Changing level1 to level2
     {
         Actor SnakeEggs = getOneIntersectingObject(SnakeEggs.class);
         if (SnakeEggs != null)
@@ -113,7 +112,7 @@ public class Snake extends Actor
             Greenfoot.setWorld(new level2());
         }
     }
-    public void ThirdLevel()
+    public void ThirdLevel() //Changing level2 to level3
     {
         Actor BirdsEggs = getOneIntersectingObject(BirdsEggs.class);
         if (BirdsEggs != null)
@@ -122,7 +121,7 @@ public class Snake extends Actor
             getWorld().showText("You Win", 10 ,10);
         }
     }
-    public void endgame()
+    public void endgame() //Changing level3 to credit screen
     {   
         Actor CanaryEggs = getOneIntersectingObject(CanaryEggs.class);
         if (CanaryEggs != null)
@@ -130,7 +129,7 @@ public class Snake extends Actor
             Greenfoot.setWorld(new GameCreditScene());
         }
     }
-    public void TouchingCheck()
+    public void TouchingCheck() //Interaction between snake and other enemy classes
     {
         if (isTouching(Car.class) || isTouching(CarToLeft.class))
         {
@@ -159,17 +158,13 @@ public class Snake extends Actor
         if (isTouching(Bat.class))
         {
             loseLife();
-            //Greenfoot.setWorld(new Level3());
         }
         if (isTouching(Alligator.class))
         {
             loseLife();
         }
-        //if (isTouching(Alligator.class)){
-           // loseLife();
-        //}
     }
-    public void IsInWater()
+    public void IsInWater() //Snake touching water
     {   
         if (isTouching(Log.class)){
             air=250;
@@ -186,7 +181,7 @@ public class Snake extends Actor
             air=250;
         }
     }
-    public void isInLava()
+    public void isInLava() //Snake touchiing lava
     {
         if(isTouching(Rock.class)){
             burn=0;
@@ -201,56 +196,43 @@ public class Snake extends Actor
         if (burn>=10){
             loseLife();
             burn=0;
-            //Greenfoot.setWorld(new Level3());
         }
         if (isTouching(LavaLava.class)==false){
             burn=0;
         }
     }
-    public void loseLife()
+    public void loseLife() //Method for losing life
     {
         life--;
         if(life==0)
         {
-            Greenfoot.stop();
             Greenfoot.setWorld(new GameOver());
         }
         setLocation(373, 709);
     }
-    public void displayLife()
+    public void displayLife() //Displays number of lives on screen
     {
         getWorld().showText("Lives: "+life, 100, 100);
     }
-    public void checkIfIsAtEdge()
+    public void checkIfIsAtEdge() //Snake loses life if is at edge
     {
         if (getX() == 0 || getX() == getWorld().getWidth()-1)
         {
             loseLife();
         }
     }
-    public void isOnLog()
+    public void isOnLog() //Moves snake if touces a log
     {
         if (isTouching(Log.class)){
             setLocation(getX()+2,getY()); 
         }
     }
-    public void isOnLog2()
-    {
-        if (isTouching(Log2.class)){
-            setLocation(getX()-2,getY()); 
-        }
-    }
-    public void playBgm(){
-        if (this.getWorld().getClass()==Level1.class){
-            Greenfoot.playSound("Level1Bgm.mp3");
-        }
-    }
-    public void touchingRock(){
+    public void touchingRock(){ //Moves snake if its on a rock
         if (isTouching(Rock.class)){
             setLocation(getX()+1,getY());
         }
     }
-    public void worldDisplay(){
+    public void worldDisplay(){ //Displays information depending on the world
         if (getWorld().getClass()==level2.class){
             displayLife();
             getWorld().showText("Air: "+air, 100, 120);

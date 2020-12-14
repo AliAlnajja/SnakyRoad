@@ -33,7 +33,7 @@ public class Level3 extends World
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
     private int count = 0;
-    public Level3()
+    public Level3() //consntructor for level 3
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1);
@@ -80,19 +80,18 @@ public class Level3 extends World
                 Border border2 = new Border();
                 addObject(border2, 750, 375);
     }
-    public void act(){
+    public void act(){ //act method
         timer();
         batsChitteringAndLavaSound();
-        //spawnMovingRock();
         setPaintOrder(Border.class, Bat.class,Snake.class,Rock2.class,Rock.class);
     }
-    public void timer(){
+    public void timer(){ //timer method
         timerForSound++;
         if (timerForSound == 198){
             timerForSound = 0;
         }
     }
-    public void batsChitteringAndLavaSound(){
+    public void batsChitteringAndLavaSound(){ //Sound effects in level 3
         if (timerForSound ==1){
             Greenfoot.playSound("BatsChittering.wav");
             Greenfoot.playSound("LavaSoundEffect.wav");
@@ -126,7 +125,7 @@ public class Level3 extends World
             return count;
         }
     }
-    public int gettingRandomNumber()
+    public int gettingRandomNumber() //random number generator from 1-20
     {
         return Greenfoot.getRandomNumber(20);
     }

@@ -33,7 +33,7 @@ public class level2 extends World
             {2,3,2,2,2,3,2,2,2,3,2,2,2,3,2,2},
             {0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0},
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
-    public level2()
+    public level2() //Constructor for level 2
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(750, 750, 1); 
@@ -64,7 +64,7 @@ public class level2 extends World
                 Border border2 = new Border();
                 addObject(border2, 750, 375);
     }
-    public void act()
+    public void act() //act method for level 2
     {
         //if (Greenfoot.getRandomNumber(100)<1 && (counter()==3 || counter() == 6))
         //{
@@ -80,10 +80,9 @@ public class level2 extends World
         spawnAlligator();
         setPaintOrder(Border.class, Snake.class, Log.class,Log2.class, Alligator.class, Water1.class);
         timer();
-        playingWaterSound();
-        
+        playingWaterSound();        
     } 
-    public int counter()
+    public int counter() 
     {
         if(count<=8){
             return count++;
@@ -93,17 +92,11 @@ public class level2 extends World
             return count;
         }
     }
-    public int gettingRandomNumber()
+    public int gettingRandomNumber() //random number generator for 1-20
     {
         return Greenfoot.getRandomNumber(20);
     }
-    public void spawnLogs(){
-        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
-        {
-            addObject(new Log(), 1, 507);
-        }
-    }
-     public int counter2(){
+    public int counter2(){
         if(count2<=400){
             return count2++;
         }
@@ -112,27 +105,27 @@ public class level2 extends World
             return count2;
         }
     }
-    public void spawnAlligator2(){
+    public void spawnAlligator2(){ //spawning alligators depending on the counter2 method
         if (counter2()==1){
             addObject(new Alligator(), 1, 300);
         }
     }
-    public void spawnAlligator1(){
+    public void spawnAlligator1(){ //spawning alligators depending on the counter1 method
         if (counter2()==200){
             addObject(new Alligator(), 1, 425);
         }
     }
-    public void spawnAlligator(){
+    public void spawnAlligator(){ //spawning alligators depending on the 2 spawning alligator methods
         spawnAlligator1();
         spawnAlligator2();
     }
-    public void timer(){
+    public void timer(){ //timer method
         timerInSeconds++;
         if (timerInSeconds == 55*6 - 110){
             timerInSeconds =0;
         }
     }
-    public void playingWaterSound(){
+    public void playingWaterSound(){ //Playing sound of water
         if (timerInSeconds == 1){
             Greenfoot.playSound("WaterSound.wav");
         }
