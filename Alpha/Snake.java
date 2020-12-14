@@ -213,7 +213,7 @@ public class Snake extends Actor
         if(life==0)
         {
             Greenfoot.stop();
-            getWorld().showText("Game Over", 375,375);
+            Greenfoot.setWorld(new GameOver());
         }
         setLocation(373, 709);
     }
@@ -263,4 +263,5 @@ public class Snake extends Actor
             getWorld().showText("Burn: "+burn+"/10", 100, 120);
         }
     } 
+    
 }
