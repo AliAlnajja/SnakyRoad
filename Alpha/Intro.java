@@ -31,7 +31,7 @@ public class Intro extends World
     {
         if (Greenfoot.isKeyDown("space")){
             Greenfoot.setWorld(new Level1());
-            Greenfoot.playSound("Level1Bgm.mp3");
+            //Greenfoot.playSound("Level1Bgm.mp3");
         }
     }
 

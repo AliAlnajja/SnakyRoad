@@ -14,7 +14,7 @@ public class Instructions extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        toInstructions();
     }
     public void toInstructions(){
         if(Greenfoot.mouseClicked(this)){
