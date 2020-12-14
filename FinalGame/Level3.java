@@ -80,7 +80,6 @@ public class Level3 extends World
         timer();
         batsChitteringAndLavaSound();
         //spawnMovingRock();
-        seeOnTop();
         setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
     }
     public void timer(){
@@ -126,8 +125,5 @@ public class Level3 extends World
     public int gettingRandomNumber()
     {
         return Greenfoot.getRandomNumber(20);
-    }
-    public void seeOnTop(){
-        setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
     }
 }

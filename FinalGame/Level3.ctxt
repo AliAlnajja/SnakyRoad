@@ -13,6 +13,4 @@ comment5.params=
 comment5.target=int\ counter()
 comment6.params=
 comment6.target=int\ gettingRandomNumber()
-comment7.params=
-comment7.target=void\ seeOnTop()
-numComments=8
+numComments=7
