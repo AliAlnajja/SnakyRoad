@@ -50,7 +50,7 @@ public class Level3 extends World
             else if (map[row][col] == 3){
                 addObject(new LavaLava(), col * 50, row * 50);
                 addObject(new Rock(), col * 50, row * 50); 
-                setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
+                setPaintOrder(Border.class, Bat.class,Snake.class,Rock2.class,Rock.class);
             }
             //else if (map[row][col] == 3){
                 //addObject(new Lava(), col * 50, row * 50);
@@ -75,12 +75,16 @@ public class Level3 extends World
                 //addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
                // addObject(new Rock(), 350+Greenfoot.getRandomNumber(350),200);
+               Border border = new Border();
+                addObject(border, 0, 375);
+                Border border2 = new Border();
+                addObject(border2, 750, 375);
     }
     public void act(){
         timer();
         batsChitteringAndLavaSound();
         //spawnMovingRock();
-        setPaintOrder(Bat.class,Snake.class,Rock2.class,Rock.class);
+        setPaintOrder(Border.class, Bat.class,Snake.class,Rock2.class,Rock.class);
     }
     public void timer(){
         timerForSound++;

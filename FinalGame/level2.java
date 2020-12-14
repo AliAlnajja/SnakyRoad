@@ -50,15 +50,19 @@ public class level2 extends World
             else if (map[row][col] == 3){
                 addObject(new Water1(), col * 50, row * 50);
                 addObject(new Log(), col * 50, row * 50);
-                setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
+                setPaintOrder(Border.class, Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
             else if (map[row][col] == 4){
                 addObject(new Water1(), col * 50, row * 50);
                 //addObject(new Log2(), col * 50, row * 50);
-                setPaintOrder(Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
+                setPaintOrder(Border.class, Snake.class, Log.class, Log2.class, Alligator.class, Water1.class);
             }
                 addObject(new BirdsEggs(), 375, 30);
                 addObject(new Snake(), 373, 709);
+                Border border = new Border();
+                addObject(border, 0, 375);
+                Border border2 = new Border();
+                addObject(border2, 750, 375);
     }
     public void act()
     {
@@ -74,7 +78,7 @@ public class level2 extends World
         //spawnLogs();
         counter();
         spawnAlligator();
-        setPaintOrder(Snake.class, Log.class,Log2.class, Alligator.class, Water1.class);
+        setPaintOrder(Border.class, Snake.class, Log.class,Log2.class, Alligator.class, Water1.class);
         timer();
         playingWaterSound();
         

@@ -55,6 +55,10 @@ public class Level1 extends World
         addObject(new Pothole(), 350+Greenfoot.getRandomNumber(350), 573);
         addObject(new Pothole(), Greenfoot.getRandomNumber(350), 573);
         prepare();
+                Border border = new Border();
+                addObject(border, 0, 375);
+                Border border2 = new Border();
+                addObject(border2, 750, 375);
     }
 
     public void act()
@@ -65,11 +69,12 @@ public class Level1 extends World
         spawnCar3();
         spawnAmbulance();
         gettingRandomNumber();
+        setPaintOrder(Border.class);
     } 
 
     public int counter()
-    {
-        if(count<=100){
+    { // 825 would be around 55 cycles per second multiplied by 30 seconds, so this counter is about 15 seconds
+        if(count<=825){
             return count++;
         }
         else{         
@@ -80,22 +85,22 @@ public class Level1 extends World
 
     public void spawnCar()
     {
-        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 18) && (counter()==0))
+        if (/*(gettingRandomNumber() == 5 || gettingRandomNumber() == 8) &&*/ (counter()==57))
         {
             addObject(new Car(), 1, 507);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 7 || gettingRandomNumber() == 18) && (counter()==74))
+        if (/*(gettingRandomNumber() == 7 || gettingRandomNumber() == 8) &&*/ (counter()==350))
         {
             addObject(new Car(), 1, 195);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 8) && (counter()==0))
+        if (/*(gettingRandomNumber() == 7 || gettingRandomNumber() == 8) && */(counter()==820))
         {
             addObject(new CarToLeft(), 749, 570);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==24))
+        if (/*(gettingRandomNumber() == 3 || gettingRandomNumber() == 1) && */(counter()==75))
         {
             addObject(new CarToLeft(), 749, 255);
             Greenfoot.playSound("CarHorn03.wav");
@@ -104,22 +109,22 @@ public class Level1 extends World
 
     public void spawnCar2()
     {
-        if ((gettingRandomNumber() == 16 || gettingRandomNumber() == 17) && (counter()==25))
+        if (/*(gettingRandomNumber() == 6 || gettingRandomNumber() == 7) &&*/ (counter()==310))
         {
             addObject(new Car2(), 1, 507);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 13 || gettingRandomNumber() == 4) && (counter()==99))
+        if (/*(gettingRandomNumber() == 3 || gettingRandomNumber() == 4) &&*/ (counter()==75))
         {
             addObject(new Car2(), 1, 195);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 1 || gettingRandomNumber() == 12) && (counter()==74))
+        if (/*(gettingRandomNumber() == 1 || gettingRandomNumber() == 2) &&*/ (counter()==550))
         {
             addObject(new Car2ToLeft(), 749, 570);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 0 || gettingRandomNumber() == 5) && (counter()==99))
+        if (/*(gettingRandomNumber() == 0 || gettingRandomNumber() == 5) && */(counter()==550))
         {
             addObject(new Car2ToLeft(), 749, 255);
             Greenfoot.playSound("CarHorn03.wav");
@@ -128,22 +133,22 @@ public class Level1 extends World
 
     public void spawnCar3()
     {
-        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 14) && (counter()==75))
+        if (/*(gettingRandomNumber() == 3 || gettingRandomNumber() == 4) &&*/ (counter()==500))
         {
             addObject(new Car3(), 1, 507);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if (gettingRandomNumber() < 2 && (counter()==25))
+        if (/*gettingRandomNumber() < 2 &&*/ (counter()==750))
         {
             addObject(new Car3(), 1, 195);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 3 || gettingRandomNumber() == 4) && (counter()==99))
+        if (/*(gettingRandomNumber() == 3 || gettingRandomNumber() == 4) &&*/ (counter()==75))
         {
             addObject(new Car3ToLeft(), 749, 570);
             Greenfoot.playSound("CarHorn03.wav");
         }
-        if ((gettingRandomNumber() == 6 || gettingRandomNumber() == 9) && (counter()==0))
+        if (/*(gettingRandomNumber() == 6 || gettingRandomNumber() == 9) &&*/ (counter()==750))
         {
             addObject(new Car3ToLeft(), 749, 255);
             Greenfoot.playSound("CarHorn03.wav");
@@ -152,22 +157,22 @@ public class Level1 extends World
 
     public void spawnAmbulance()
     {
-        if (gettingRandomNumber() < 2 && (counter()==50))
+        if (/*gettingRandomNumber() < 2 &&*/ (counter()==700))
         {
             addObject(new Ambulance(), 1, 507);
             Greenfoot.playSound("AmbulanceSiren.wav");
         }
-        if ((gettingRandomNumber() == 5 || gettingRandomNumber() == 6) && (counter()==50))
+        if (/*(gettingRandomNumber() == 5 || gettingRandomNumber() == 6) &&*/ (counter()==500))
         {
             addObject(new Ambulance(), 1, 195);
             Greenfoot.playSound("AmbulanceSiren.wav");
         }
-        if ((gettingRandomNumber() == 15 || gettingRandomNumber() == 16) && (counter()==49))
+        if (/*(gettingRandomNumber() == 5 || gettingRandomNumber() == 6) && */(counter()==350))
         {
             addObject(new AmbulanceToLeft(), 749, 570);
             Greenfoot.playSound("AmbulanceSiren.wav");
         }
-        if ((gettingRandomNumber() == 17 || gettingRandomNumber() == 18) && (counter()==49))
+        if (/*(gettingRandomNumber() == 4 || gettingRandomNumber() == 8) &&*/ (counter()==350))
         {
             addObject(new AmbulanceToLeft(), 749, 255);
             Greenfoot.playSound("AmbulanceSiren.wav");
@@ -176,7 +181,7 @@ public class Level1 extends World
 
     public int gettingRandomNumber()
     {
-        return Greenfoot.getRandomNumber(20);
+        return Greenfoot.getRandomNumber(10);
     }
 
     /**
