@@ -14,6 +14,11 @@ public class Play extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        toLevel1();
     }    
+    public void toLevel1(){
+        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(new Level1());
+        }
+    }
 }

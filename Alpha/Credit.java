@@ -14,6 +14,12 @@ public class Credit extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        toCredits();
+    }
+    public void toCredits(){
+        if(Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(new GameCreditScene());
+        }
+        
+    }
 }

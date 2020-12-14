@@ -263,4 +263,5 @@ public class Snake extends Actor
             getWorld().showText("Burn: "+burn+"/10", 100, 120);
         }
     } 
+    
 }
